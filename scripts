@@ -1,0 +1,15 @@
+npx sequelize-cli model:generate --name User --attributes email:string,nome:string,sobrenome:string,password:string
+
+npx sequelize-cli model:generate --name Company --attributes razao_social:string,cep:string,rua:string,cidade:string,uf:string,bairro:string,numero:string
+
+npx sequelize-cli model:generate --name Curso --attributes curso:string,descricao:string
+
+npx sequelize-cli model:generate --name TipoCurso --attributes tipocurso:string,descricao:string
+
+npx sequelize-cli model:generate --name UserAcademico --attributes id_usuario:integer,id_curso:integer,id_tipocurso:integer,data_inicio:dateonly,data_termino:dateonly,descricao:string
+
+npx sequelize-cli model:generate --name UserProfissional --attributes id_usuario:integer,id_cargo:integer,data_inicio:dateonly,data_termino:dateonly,descricao:string
+
+npx sequelize-cli model:generate --name Cargo --attributes cargo:string,descricao:string
+
+npx sequelize-cli db:migrate
