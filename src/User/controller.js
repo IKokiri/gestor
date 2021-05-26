@@ -11,7 +11,6 @@ exports.findAll = () => {
 }
 
 exports.create = (req) => {
-
   const result = DAO.create(req)
   .then(function(retorno){      
     return retorno;  

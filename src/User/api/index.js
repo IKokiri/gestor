@@ -19,7 +19,6 @@ routes.get(`/gestor/${route}/1.0/:id`, async (req, res, next)=>{
     id= req.params.id
     const objeto  = await controller.findOne(id)
     res.status(200).json(objeto)
-    
 })
 
 routes.put(`/gestor/${route}/1.0/:id`, async (req, res, next)=>{
