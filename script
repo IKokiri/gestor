@@ -1,3 +1,6 @@
-npx sequelize-cli model:generate --name User --attributes email:[type:string,unique:true],password:string
+npx sequelize-cli model:generate --name User --attributes email:string,password:string
+npx sequelize-cli model:generate --name Person --attributes nome:string,sobrenome:string
+
+npx sequelize-cli model:generate --name Department --attributes departamento:string,numero:string
 
 npx sequelize-cli db:migrate

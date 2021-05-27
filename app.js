@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const userApi = require('./src/User/api');
+const personApi = require('./src/Person/api');
 
 var cors = require('cors');
 
@@ -17,7 +18,8 @@ const sequelize = new Sequelize('acelerapet', 'root', '', {
 const port = process.env.PORT
 
 app.use('/',cors(),express.json(),
-userApi
-                    );
+userApi,
+personApi
+);
 
 app.listen(port, () => {console.log(port)})
