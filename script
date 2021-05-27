@@ -1,6 +1,24 @@
+usuário
 npx sequelize-cli model:generate --name User --attributes email:string,password:string
+Pessoa
 npx sequelize-cli model:generate --name Person --attributes nome:string,sobrenome:string
+funcionario
+    Funcionario
+    npx sequelize-cli model:generate --name Employee --attributes registro:string
+    departamento
+    npx sequelize-cli model:generate --name Department --attributes departamento:string,numero:string
+    cargo
+    npx sequelize-cli model:generate --name Position --attributes funcao:string
+Contrato
+    npx sequelize-cli model:generate --name Contract --attributes data:dateonly,numero:integer
+Proposta
+    npx sequelize-cli model:generate --name Proposal --attributes data:dateonly,numero:integer
 
-npx sequelize-cli model:generate --name Department --attributes departamento:string,numero:string
+Hora Trabalhada contrato
+    npx sequelize-cli model:generate --name HourWorkedContract --attributes data:dateonly,id_employee:integer,id_contract:integer,id_department_employeed:integer,hora:time
+Hora Trabalhada proposta
+    npx sequelize-cli model:generate --name HourWorkedProposal --attributes data:dateonly,id_employee:integer,id_proposal:integer,id_department_employeed:integer,hora:time
+Hora Trabalhada departamento
+    npx sequelize-cli model:generate --name HourWorkedDepartment --attributes data:dateonly,id_employee:integer,id_department:integer,id_department_employeed:integer,hora:time
 
 npx sequelize-cli db:migrate
