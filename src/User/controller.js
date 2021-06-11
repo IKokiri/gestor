@@ -28,6 +28,16 @@ exports.findOne = (id) => {
   return result
 }
 
+exports.findEmailPassword = (email,password) => {
+
+  const result = DAO.findOne({where:{email:email,password:password}})
+  .then(function(retorno){      
+    return retorno;  
+  });
+  
+  return result
+}
+
 exports.update = (id,req) => {
 
   const result = DAO.update(

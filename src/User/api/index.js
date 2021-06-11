@@ -21,6 +21,15 @@ routes.get(`/gestor/${route}/1.0/:id`, async (req, res, next)=>{
     res.status(200).json(objeto)
 })
 
+routes.get(`/gestor/${route}/1.0/:email/:password`, async (req, res, next)=>{
+    
+    email = req.params.email
+    password = req.params.password
+
+    const objeto  = await controller.findEmailPassword(email,password)
+    res.status(200).json(objeto)
+})
+
 routes.put(`/gestor/${route}/1.0/:id`, async (req, res, next)=>{
 
     id = req.params.id

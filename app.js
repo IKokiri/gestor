@@ -13,6 +13,8 @@ const hourWorkedDepartmentApi = require('./src/HourWorkedDepartment/api');
 
 var cors = require('cors');
 
+const auth = require("./mdwr");
+
 require('dotenv').config()
 
 const { Sequelize } = require('sequelize');
@@ -25,7 +27,7 @@ const sequelize = new Sequelize('acelerapet', 'root', '', {
 
 const port = process.env.PORT
 
-app.use('/',cors(),express.json(),
+app.use('/',cors(),auth,express.json(),
         userApi,
         personApi,
         departmentApi,
